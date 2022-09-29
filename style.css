@@ -2,7 +2,7 @@
 :root {
     --blue: #31C6D4;
     --teal: #00FFD1; 
-    --yeallow: #FFFF00;
+    --yellow: #FFFF00;
     --red: #FF1E1E;
 }
 
@@ -102,6 +102,7 @@
     font-size: 60px;
     margin: 30px 0px;
 }
+
 .w-list{
     display: flex;
     flex-wrap: wrap;
@@ -138,7 +139,7 @@
     height: 15px;
     border-radius: 50%;
     margin: 0px 5px;
-    background-color: var(--yeallow);
+    background-color: var(--yellow);
 }
 .circle-green{
     width: 15px;
@@ -165,6 +166,8 @@
     padding: 0px 12px;
     color: black;
     margin: auto;
+    text-decoration: none;
+    cursor: pointer;
 }
 .addressbar-close{
     background: lightgray;
@@ -186,69 +189,72 @@
 }
 
 .contact{
+    padding: 50px;
     height: 100vh;
 }
 
 .c{
-    padding: 50px;
+    height: 80%;
     display: flex;
     align-items: center;
-    height: 100%;
-
 }
 
 .c-left{
-    height: 100%;
     flex: 1;
     display: flex;
     justify-content: center;
-    align-items: flex-end;
+    align-items: center;
+    height: 100%;
 }
 
 .c-right{
-    height: 100%;
     flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+
+#c-message{
+    height: 80%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 10px;
 }
 
 .c-name{
     display: flex;
-    gap: 10px;
+    gap: 16px;
+
+}
+
+#name, #email{
+    border: none;
+    border-bottom: 1px solid lightgray;
+    width: auto;
+    font-size: 24px;
 }
 
 .c-email{
     display: flex;
-    gap: 10px;
-}
-
-.c-email input{
-    border: none;
-    border-bottom: 1px solid lightgray;
-    width: auto;
-}
-.c-email input::placeholder, .c-name input::placeholder{
-    color: black;
-}
-
-.c-name h1, .c-message h1, .c-email h1{
-    font-size: 30px;
-    font-weight: 200;
-}
-
-.c-name input{
-    border: none;
-    border-bottom: 1px solid lightgray;
-    width: auto;
+    gap: 16px;
 }
 
 .c-message textarea{
     width: 100%;
     border: none;
     border-bottom: 1px solid lightgray;
+    font-size: 24px;
 }
+
+.c-name h1, .c-message h1, .c-email h1, .c-hello{
+    font-size: 30px;
+    font-weight: 200;
+}
+
 .c-send{
     align-self: flex-end;
 }
@@ -260,13 +266,31 @@
     font-weight: 200;
     color: var(--blue);
     cursor: pointer;
+    border: 1px solid var(--blue);
+    padding: 0 12px;
+    margin: 16px 8px;
+}
+
+.c-send-button:hover{
+    background-color: var(--blue);
+    color: white;
+    box-shadow: 5px 5px white,
+        5px 5px 0px 1px var(--blue);
 }
 
 .c-text{
-    align-self: flex-end;
-    font-size: 40px;
+    font-size: 60px;
     font-weight: 800;
-    margin-bottom: 50px;
+    text-align: end;
+    margin-bottom: 48px;
+}
+
+.s-text{
+    font-size: 60px;
+    font-weight: 800;
+    text-align: center;
+    color: var(--yellow);
+    margin-bottom: 48px;
 }
 
 .c-icons{
@@ -275,29 +299,60 @@
 }
 
 .c-social-icons{
+    height: 100%;
     list-style: none;
-
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 }
 
-li:nth-child(odd){
-    padding: 50px 0px;
+#name-error, #email-error, #message-error{
+    display: none;
+    color: var(--red);
+}
+.s{
+    background-color: var(--blue);
+    padding: 50px;
+}
+.s-icons-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
+.s-icon img{
+    width: 100px;
+    height: 100px;
+    padding: 12px;
+}
 @media screen and (max-width: 480px) {
     .i{
         flex-direction: column;
+        height: auto;
     }
     .i-name{
         font-size: 50px;
         line-height: 1;
         padding: 25px 0px;
     }
-    .i-title{
-        height: 60px;
+    .i-left{
+        position: relative;
+        min-height: 50vh;
+    }
+    .i-right{
+        position: relative;
+        min-height: 60vh;
+
+    }
+    .i-bg{
+        width: 100%;
+        height: 100%;
+        background-color: var(--blue);
+        clip-path: none;
     }
     .i-title-item{
-        font-size: 30px;
-        line-height: 1;
+        font-size: 25px;
     }
     .i-cta{
         width: 100%;
@@ -313,35 +368,56 @@ li:nth-child(odd){
         height: auto;
     }
     .c-left{
+        padding: 24px 0px;
         order: 2;
     }
     .c-right{
         order: 1;
     }
-    .c-right *{
-        padding: 5px 0px;
+    .c-text{
+        font-size: 40px;
+        text-align: end;
+        margin-bottom: 48px;
+    }
+    .w-title{
+        font-size: 40px;
+        margin-bottom: 48px;
+    }
+    .s-text{
+        font-size: 40px;
+        margin-bottom: 48px;
     }
     .c-social-icons{
         display: flex;
-    }
-    .c-social-icons li{
-        padding: 25px;
-    }
-    .c-name{
         flex-direction: row;
     }
-    .c-name input{
-        width: 50%;
+    .c-social-icons li{
+        padding: 12px;
     }
-    .c-name h1, .c-message h1, .c-email h1{
-        font-size: 16px;
+    .c-name{
+        flex-direction: column;
     }
-    .c-send-button{
-        margin: 20px 0px;
+    .c-name h1, .c-message h1, .c-email h1, .c-hello{
         font-size: 20px;
     }
-
+    .c-send-button{
+        font-size: 20px;
+        font-weight: 500;
+        border: 1px solid var(--blue);
+        margin: 24px 0 0 12px;
+        padding: 6px 12px;
+    }
     .c-email{
         flex-direction: column;
+    }
+    .c-icons{
+        width: 40px;
+        height: 40px;
+    }
+    #name, #email{
+        font-size: 16px;
+    }
+    #message{
+        font-size: 16px;
     }
 }

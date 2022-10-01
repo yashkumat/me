@@ -326,6 +326,7 @@
     height: 100px;
     padding: 12px;
 }
+
 @media screen and (max-width: 480px) {
     .i{
         flex-direction: column;
@@ -398,10 +399,10 @@
         flex-direction: column;
     }
     .c-name h1, .c-message h1, .c-email h1, .c-hello{
-        font-size: 20px;
+        font-size: 16px;
     }
     .c-send-button{
-        font-size: 20px;
+        font-size: 16px;
         font-weight: 500;
         border: 1px solid var(--blue);
         margin: 24px 0 0 12px;
@@ -415,14 +416,16 @@
         height: 40px;
     }
     #name, #email{
-        font-size: 16px;
+        font-size: 15px;
+        width: 80%;
     }
     #message{
-        font-size: 16px;
+        font-size: 15px;
     }
+
     .s-icon img{
-    width: 75px;
-    height: 75px;
-    padding: 12px;
-}
+        width: 75px;
+        height: 75px;
+        padding: 12px;
+    }
 }

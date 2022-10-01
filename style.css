@@ -318,7 +318,7 @@
 .s-icons-container{
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-evenly;
 }
 
 .s-icon img{
@@ -420,4 +420,9 @@
     #message{
         font-size: 16px;
     }
+    .s-icon img{
+    width: 75px;
+    height: 75px;
+    padding: 12px;
+}
 }

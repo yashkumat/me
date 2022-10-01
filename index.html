@@ -7,6 +7,7 @@
     <meta name="keywords" content="HTML, CSS, JavaScript">
     <meta name="author" content="Yash Kumat">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="1;url=http://example.com/" />
     <link rel="shortcut icon" href="me.png" type="image/x-icon">
     <title>yashk | Web Developer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com"> 
@@ -492,6 +493,9 @@
     </section>
 
     <script>
+        if (window.location.href==="http://www.yashk.ml" || window.location.href==="https://yashkumat.github.io/me") {
+            window.location.href = "https://www.yashk.ml"; 
+        }
         function send_mail(){
             
             if(validate()){
